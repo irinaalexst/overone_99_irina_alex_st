@@ -65,7 +65,7 @@ def deactivate_alarm():
 
 
 def sound_alarm():
-    mixer.music.load('C:\\Users\\Hp\\PycharmProjects\\pythonProject1\\tone.wav')
+    mixer.music.load('https://github.com//irinaalexst//overone_99_irina_alex_st//blob//master//tone.wav')
     mixer.music.play()
     # selected.set(0)
 #run endlessly
