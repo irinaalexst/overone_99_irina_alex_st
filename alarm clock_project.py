@@ -100,7 +100,7 @@ def alarm():
         sleep(1)
 
 #import image + using import
-Photo = PhotoImage(file ='C:\\Users\\Hp\\PycharmProjects\\pythonProject1\\img2\\cute.png')
+Photo = PhotoImage(file ='https://github.com//irinaalexst//overone_99_irina_alex_st//blob//master//cute.png')
 
 img = Label(frame_body,image=Photo)
 img.grid(rowspan=3, column=0)
