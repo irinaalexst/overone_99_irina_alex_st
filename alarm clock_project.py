@@ -65,7 +65,7 @@ def deactivate_alarm():
 
 
 def sound_alarm():
-    mixer.music.load('https://github.com//irinaalexst//overone_99_irina_alex_st//blob//master//tone.wav')
+    mixer.music.load('tone.wav')
     mixer.music.play()
     # selected.set(0)
 #run endlessly
@@ -100,7 +100,7 @@ def alarm():
         sleep(1)
 
 #import image + using import
-Photo = PhotoImage(file ='https://github.com//irinaalexst//overone_99_irina_alex_st//blob//master//cute.png')
+Photo = PhotoImage(file ='cute.png')
 
 img = Label(frame_body,image=Photo)
 img.grid(rowspan=3, column=0)
