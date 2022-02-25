@@ -45,7 +45,7 @@ name.pack(fill=X)
 panel = Frame(root)
 panel.place(x=5, y=70)
 
-photo = PhotoImage(file='C:\\Users\\Hp\\PycharmProjects\\pythonProject1\\img2\\cute.png')
+photo = PhotoImage(file='cute.png')
 
 photo_set = Label(panel, image=photo)
 photo_set.grid(rowspan=4, column=0)
