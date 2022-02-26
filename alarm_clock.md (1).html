@@ -1,0 +1,81 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><title>alarm_clock.md</title><style></style></head><body id="preview">
+<h2 class="code-line" data-line-start=0 data-line-end=1><a id="Alarm_Clock_0"></a>Alarm Clock</h2>
+<p class="has-line-data" data-line-start="2" data-line-end="3">As [J.M. POWER] once mentioned:</p>
+<blockquote>
+<p class="has-line-data" data-line-start="4" data-line-end="7">IF YOU WANT TO MAKE YOUR DREAMS COME TRUE,<br>
+THE FIRST THING YOU HAVE TO DO IS<br>
+WAKE UP.</p>
+</blockquote>
+<h1 class="code-line" data-line-start=8 data-line-end=9><a id="My_goal_was__8"></a>My goal was …</h1>
+<p class="has-line-data" data-line-start="10" data-line-end="11">to create the alarm clock that can help</p>
+<ul>
+<li class="has-line-data" data-line-start="11" data-line-end="12">to organise your sleeping hours</li>
+<li class="has-line-data" data-line-start="12" data-line-end="13">to wake up with music of your soul</li>
+<li class="has-line-data" data-line-start="13" data-line-end="14">not to keep your mind busy</li>
+<li class="has-line-data" data-line-start="14" data-line-end="16">to build ‘to do list’ for the day</li>
+</ul>
+<h2 class="code-line" data-line-start=16 data-line-end=17><a id="Import_16"></a>Import</h2>
+<p class="has-line-data" data-line-start="18" data-line-end="19">Alarm clock requires to import:</p>
+<pre><code class="has-line-data" data-line-start="21" data-line-end="27" class="language-from">from tkinter import messagebox
+import time
+import datetime
+import threading
+from pygame import mixer
+</code></pre>
+<h2 class="code-line" data-line-start=27 data-line-end=28><a id="Thread_27"></a>Thread</h2>
+<p class="has-line-data" data-line-start="28" data-line-end="29">Using thread improves execution time, and is very useful when we need to perform multiple tasks at the same time.</p>
+<p class="has-line-data" data-line-start="30" data-line-end="31">The Thread() accepts many parameters. The main ones are: target: specifies a function (fn) to run in the new thread. args: specifies the arguments of the function (fn). The args argument is a tuple.</p>
+<p class="has-line-data" data-line-start="32" data-line-end="33">For the project I’ve realized</p>
+<pre><code class="has-line-data" data-line-start="35" data-line-end="38" class="language-def">    t1 = threading.Thread(target=alarm, args=())
+    t1.start()
+</code></pre>
+<p class="has-line-data" data-line-start="38" data-line-end="40">where is ’ args’ is the argument tuple for the target invocation<br>
+‘target’ is the thread function</p>
+<h2 class="code-line" data-line-start=41 data-line-end=42><a id="Pygame_Mixer_41"></a>Pygame Mixer</h2>
+<p class="has-line-data" data-line-start="43" data-line-end="44"><code>from pygame import mixer</code></p>
+<p class="has-line-data" data-line-start="45" data-line-end="46">The Python Pygame Mixer Library brings in support Audio and Sound playback. The great thing about it is that it’s not just restricted to making games. You can use the Mixer library all on it’s own as a stand alone library to play sound and music in your average Python program.</p>
+<pre><code class="has-line-data" data-line-start="48" data-line-end="53">mixer.init()
+mixer.music.load('tone.wav')
+mixer.music.play()
+mixer.music.stop()
+</code></pre>
+<h2 class="code-line" data-line-start=54 data-line-end=55><a id="Setting_a_Tkinter_Window_54"></a>Setting a Tkinter Window</h2>
+<p class="has-line-data" data-line-start="55" data-line-end="56">Import of necessary libraries:</p>
+<p class="has-line-data" data-line-start="57" data-line-end="58"><code>from tkinter import *</code></p>
+<p class="has-line-data" data-line-start="59" data-line-end="60">Creating a simple Tkinter window in some steps:</p>
+<pre><code class="has-line-data" data-line-start="62" data-line-end="66">root = Tk()
+root.title(&quot;Name your window&quot;)
+root.geometry(&quot;900x500&quot;)
+</code></pre>
+<p class="has-line-data" data-line-start="66" data-line-end="67">At the end of a code, don’t forget to run the function:</p>
+<pre><code class="has-line-data" data-line-start="68" data-line-end="70">root.mainloop()
+</code></pre>
+<h2 class="code-line" data-line-start=70 data-line-end=71><a id="Adding_a_picture_70"></a>Adding a picture</h2>
+<pre><code class="has-line-data" data-line-start="73" data-line-end="75">from PIL import ImageTk, Image
+</code></pre>
+<p class="has-line-data" data-line-start="75" data-line-end="76">You can import images in 2 ways:</p>
+<ol>
+<li class="has-line-data" data-line-start="77" data-line-end="78">You can copy the path and add ‘\\’</li>
+</ol>
+<pre><code class="has-line-data" data-line-start="79" data-line-end="81">photo = PhotoImage(file='C:\\Users\\Hp\\PycharmProjects\\pythonProject1\\img2\\cute.png')
+</code></pre>
+<p class="has-line-data" data-line-start="81" data-line-end="82">or</p>
+<ol start="2">
+<li class="has-line-data" data-line-start="82" data-line-end="83">You can simply write</li>
+</ol>
+<pre><code class="has-line-data" data-line-start="84" data-line-end="86">photo = PhotoImage(file='cute.png')
+</code></pre>
+<p class="has-line-data" data-line-start="86" data-line-end="87">Second variant didn’t work for me in Pycharm, so I found rather helpful the second variant.</p>
+<p class="has-line-data" data-line-start="88" data-line-end="89">Grid() method in Tkinter organizes widgets in a table-like structure in the parent widget.</p>
+<pre><code class="has-line-data" data-line-start="90" data-line-end="93">photo_set = Label(panel, image=photo)
+photo_set.grid(rowspan=4, column=0)
+</code></pre>
+<h1 class="code-line" data-line-start=93 data-line-end=94><a id="Syntax_93"></a>Syntax</h1>
+<p class="has-line-data" data-line-start="95" data-line-end="96">Here is the list of used -grid options −</p>
+<ul>
+<li class="has-line-data" data-line-start="97" data-line-end="98">column − The column to put widget in; default 0 (leftmost column).</li>
+<li class="has-line-data" data-line-start="98" data-line-end="99">columnspan − How many columns widgetoccupies; default 1.</li>
+<li class="has-line-data" data-line-start="99" data-line-end="100">row − The row to put widget in; default the first row that is still empty.</li>
+<li class="has-line-data" data-line-start="100" data-line-end="101">padx, pady − How many pixels to pad widget, horizontally and vertically, outside v’s borders.</li>
+</ul>
+</body></html>
